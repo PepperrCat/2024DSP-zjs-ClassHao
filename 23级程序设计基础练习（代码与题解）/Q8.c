@@ -24,7 +24,7 @@ int main()
 void reverseStr(char *s, int len) {
     int i = 0, j = len - 1;
     int tmp;
-    while (i <= j) {  // 写题解时联系二分查找
+    while (i <= j) {  
         tmp = s[i];
         s[i] = s[j];
         s[j] = tmp;
@@ -33,7 +33,9 @@ void reverseStr(char *s, int len) {
 }
 
 void itob(int n, char *s, int b) {
+    // 处理负号
     if (n < 0) s[0] = '-';
+    // 正数化
     n = n > 0 ? n : -n;
 
     char tmp[105] = {0};  // 临时变量,记录序列
@@ -43,8 +45,9 @@ void itob(int n, char *s, int b) {
         tmp[len++] = map[n % b];
         n /= b;
     }
+    // 翻转字符串
     reverseStr(tmp, len);
-
+    // 拼接正负号
     strcat(s, tmp);
 }
   

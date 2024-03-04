@@ -9,13 +9,16 @@ int main()
 {
     int n;
     double x1, y1, x2, y2, x3, y3;
-    double res = 0;
-    scanf("%d", &n);
+    double res = 0;  // 结果
+    scanf("%d", &n);  
+    // 先读入两个点的坐标，其中第一个点为定点
     scanf("%lf%lf%lf%lf", &x1, &y1, &x2, &y2);
 
     for (int i = 2; i < n; i++) {
         scanf("%lf%lf", &x3, &y3);
+        // 计算当前三角形面积，并加到
         res += triangle_area(x1, y1, x2, y2, x3, y3);
+        // 更新第二个点的左坐标
         x2 = x3;
         y2 = y3;
     }

@@ -11,6 +11,7 @@ int main()
 
     int n1 = 0, n2 = 0;
     while(scanf("%d", &a[n1++]) != EOF) {
+        // 不断读到第一个数组，直到遇到换行符终止
         if (getchar() == '\n') {
             break;
         }
@@ -31,9 +32,9 @@ int main()
             i++; j++;
         }
     }
-    if (i <= n1 - 1) {
+    if (i <= n1 - 1) {  // i 没有遍历到末尾
         while (i < n1) printf("%d ", a[i++]);
-    } else {
+    } else {  // j 没有遍历到末尾
         while (j < n2) printf("%d ", b[j++]);
     }
 
