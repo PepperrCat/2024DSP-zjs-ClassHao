@@ -5,7 +5,7 @@ typedef struct {
     int i;
     int j;
     int len;
-} ressult;
+} result;
 
 int main()
 {
@@ -14,9 +14,10 @@ int main()
 
     if ((n & (n - 1)) == 0) printf("No Answer");
     else {
+        // i代表窗口头，j代表窗口尾
         int i = 1, j = 1;
-        int sum = 0;
-        ressult res; res.len = 0;
+        int sum = 0;  // 当前窗口内的和
+        result res; res.len = 0;
         for (j = 1; j < n; j++) {
             sum += j;
             while (sum > n) sum -= (i++);
